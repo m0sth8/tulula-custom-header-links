@@ -48,15 +48,24 @@
     }
   });
 
+    api.createWidget('custom-header-links', {
+      tagName: 'ul.custom-header-links',
+      html() {
+        return headerLinks;
+      },
+    
+    });
+
+
   api.decorateWidget("header-buttons:before", helper => {
-    return helper.h(
-      "ul.custom-header-links", headerLinks
-    );
+      return helper.attach("custom-header-links")
   });
 
   api.decorateWidget("home-logo:after", helper => {
     let titleVisible = helper.attrs.minimized;
-    if (titleVisible) {
+    const mobileView = helper.widget.site.mobileView;
+    // TODO: show in menu.
+    if (titleVisible || mobileView) {
       $(".d-header").addClass("hide-menus");
     } else {
       $(".d-header").removeClass("hide-menus");

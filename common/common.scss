@@ -8,18 +8,48 @@
   }
 }
 
+@media screen and (max-width: 690px) {
+  .headerLink:not(.keep) {
+    display: none;
+  }
+}
+
 .custom-header-links {
+  padding-left: 18px;
   display: inline-flex;
   align-items: center;
   margin: 0;
   .headerLink {
     list-style: none;
+    min-width: 64px;
+    margin-left: 8px;
+    padding: 7px 10px;   
+    border-radius: 4px;   
+    justify-content: center;   
+    text-align:center;
+
     a {
-      padding: 6px 10px;
+      margin-left: 8px;
+      margin-right: 8px;        
       color: $header_primary;
-      font-size: $font-up-1;
+      font-size: 0.875rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 500;
+      line-height: 1.75;
+      letter-spacing: 0.02857em;
+      text-transform: uppercase;      
     }
+
   }
+    .headerLink:hover {
+        background-color: rgba(0, 0, 0, 0.08);
+    } 
+    .headerLink:active {
+        background-color: rgba(0, 0, 0, 0.08);
+    }     
+    .headerLink.community {
+        background-color: rgba(0, 0, 0, 0.08);
+    }
 }
 
 .desktop-view .vmo,
