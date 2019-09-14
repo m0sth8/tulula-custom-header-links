@@ -49,9 +49,9 @@
   });
 
     api.createWidget('custom-header-links', {
-      tagName: 'ul.custom-header-links',
+      tagName: 'div.custom-header-links-wrapper',
       html() {
-        return headerLinks;
+        return h("ul.custom-header-links", headerLinks);
       },
     
     });
